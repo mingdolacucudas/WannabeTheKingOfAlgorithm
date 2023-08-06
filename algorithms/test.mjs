@@ -1,6 +1,6 @@
 import { LinkedList, Node } from "./LinkedList.mjs";
 import { Stack } from "./Stack.mjs";
-
+import { HashTable } from "./HashTable.mjs";
 // let node1 = new Node(1);
 // let node2 = new Node(2);
 // let node3 = new Node(3);
@@ -39,3 +39,40 @@ console.log(stack.pop().data);
 //enque: 데이터삽입
 //deque: 데이터 제거
 //front : 데이터 참조
+
+// 덱  deque
+
+// 데이터의 사입과 제거는 헤드 테일 두군데서 가능
+
+// 스택과 큐를 모두 구현 가능
+
+// print all
+
+//해시 테이블 = 해시 + 테이블
+//해시 맵, 해시맵, 딕셔너리
+//해시함수의 선정이 중요
+//장점 : 빠른 데이터 읽기, 키에 대한 데이터 존재 여부 확인, 삽입, 삭제
+//단점: 메모리를 많이 차지함, 좋은 해시 함수의 구현은 필수
+//set : 삽입
+//get : 조회
+//remove : 삭제
+let hashTable = new HashTable();
+hashTable.set(1, "이운재");
+hashTable.set(4, "이유리");
+hashTable.set(20, "이유빈");
+hashTable.set(6, "이현주");
+hashTable.set(22, "이현주");
+hashTable.set(21, "이현주");
+hashTable.set(5, "이현주");
+hashTable.set(10, "이현주");
+
+//셋 : 데이터의 중복을 허용하지 않는 자료 구조
+//해시테이블 이용 --> hashset
+//해시테이블의 value값은 사용하지 않음. key값만 사용
+//key: key임과 동시에 값으로도 쓰임.
+//add : 데이터 삽입
+//isContain : 데이터 존재 여부 확인
+//remove : 데이터 삭제
+//clear : 전체 삭제
+//isEmpty : 비어있는지 확인
+//printAll : 전체 출력
