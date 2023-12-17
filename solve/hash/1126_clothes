@@ -1,0 +1,36 @@
+아무리 봐도 이해못하겠ㄴ;'''
+
+function solution(clothes) {
+    let hashmap = new Map();
+
+    // 의상의 종류를 기준으로 해시맵에 개수를 누적하여 저장
+    clothes.forEach(item => {
+        const [name, type] = item;
+        if (hashmap.has(type)) {
+            hashmap.set(type, hashmap.get(type) + 1);
+        } else {
+            hashmap.set(type, 1);
+        }
+    });
+
+    // 의상 조합의 수 계산
+    //약수개수 구하는 방식이랑 같은거에요.
+    //모드 곱하여 해당 의상을 입은경우에, 입지않은 경우 까지 합해서 계산합니다.
+    let answer = 1;
+    for (let count of hashmap.values()) {
+        // 해당 종류의 의상을 입지 않는 경우도 포함하여 계산
+        answer *= (count + 1);
+    }
+
+    // 모든 의상을 입지 않은 경우를 제외하여 반환
+    return answer - 1;
+}
+
+// 예시 테스트
+const clothes = [
+    ["yellow_hat", "headgear"],
+    ["blue_sunglasses", "eyewear"],
+    ["green_turban", "headgear"]
+];
+
+console.log(solution(clothes)); // 출력: 5
