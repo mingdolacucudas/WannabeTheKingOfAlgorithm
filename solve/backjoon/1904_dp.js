@@ -27,34 +27,34 @@ n - 1 + (n - 2);
 // n이 7
 //시간초과
 const test = (n) => {
-  if (n === 1) {
-    return 1;
-  }
-  if (n === 2) {
-    return 1;
-  }
+	if (n === 1) {
+		return 1;
+	}
+	if (n === 2) {
+		return 1;
+	}
 
-  return test(n - 1) + test(n - 2);
+	return test(n - 1) + test(n - 2);
 };
 const { readFileSync } = require("fs");
 const token = readFileSync(0, { encoding: "ascii" })
-  .split(/\s+/)
-  [Symbol.iterator]();
+	.split(/\s+/)
+	[Symbol.iterator]();
 
 const N = +token.next().value;
 //한번계산한건 다시계산 안하게
 let obj = {};
 const test2 = (n) => {
-  if (n === 1) {
-    return 1;
-  }
-  if (n === 2) {
-    return 1;
-  }
-  if (obj[n] === undefined) {
-    obj[n] = test2(n - 1) + test2(n - 2);
-  }
-  return obj[n] % 15746;
+	if (n === 1) {
+		return 1;
+	}
+	if (n === 2) {
+		return 1;
+	}
+	if (obj[n] === undefined) {
+		obj[n] = test2(n - 1) + test2(n - 2);
+	}
+	return obj[n] % 15746;
 };
 const answer = test2(N);
 console.log(answer);
