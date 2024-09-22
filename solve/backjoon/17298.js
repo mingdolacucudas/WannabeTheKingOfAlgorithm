@@ -21,21 +21,3 @@ function solution(N, input) {
 console.log(solution(N, input));
 // 5 7 7 -1
 
-function solution(prices) {
-	var answer = [];
-	// let arr  = array.from()
-	let stack = [];
-	for (let i = 0; i < prices.length; i++) {
-		let second = prices.length - i;
-		if (i === 0 || i < prices.length - 1) {
-			answer.push(second);
-			return;
-		}
-		//앞전의 가격보다 현재 가격이 낮다면 second 에서 -1 해준다.
-		if (prices[i] > prices[i + 1]) {
-			second = second - 1;
-			answer.push(second);
-		}
-	}
-	return answer;
-}
